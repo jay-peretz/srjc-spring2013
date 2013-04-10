@@ -79,20 +79,23 @@ box-shadow:  0 0 3px 3px #BBB;
 body.mceContentBody {
    background: #000;
 }
-#lesson-info p.muted {
+#lesson-info p.muted , #project-list  p.muted {
 	margin-left:35px;
 	
 }
 a , a:hover  a:active , p.student-listing , #lesson-list td {
 	color:#900 !important;
 }
-#lesson-info p.review {
+#lesson-info p.review  , #project-list p.review {
 	margin-left:45px;
 	background:#E0F8FB;
 	border-radius:5px;
 	margin-top: 10px;
 	margin-bottom:10px;
 	padding:10px;
+}
+#projecttext {
+	font-size:85%;
 }
 
 
