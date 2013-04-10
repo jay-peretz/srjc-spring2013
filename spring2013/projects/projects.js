@@ -36,7 +36,7 @@ $(document).ready(function() {
 		});
 	}
 	$("#submit-comment").click(function() {
-		alert("test");
+		
 		$.ajax({
 			type:"POST",
 			data:{comment:$("#enter-comment").val(), student_email: user , id : $(this).attr("data-id")},
@@ -44,10 +44,14 @@ $(document).ready(function() {
        		datatype: "json"
 		}).done(function(data) {
 			data = $.parseJSON(data);
+			if (!students[$("#submit-comment").attr("data-id")].comments) {
+					students[$("#submit-comment").attr("data-id")].comments = {};
+			}
 			students[$("#submit-comment").attr("data-id")].comments[data.commentid] = {first_name : data.first_name, id_project_comment: data.commentid , comment:$("#enter-comment").val() , student_email: user };
-			console.log(students);	
+			alert("Your comment was entered.");
 			listProjects();  
-				
+			$("#write-comment").modal('hide');	
+			$("#enter-comment").val("");
 		});
 	});
 	var students = getStudents();
