@@ -97,5 +97,7 @@ a , a:hover  a:active , p.student-listing , #lesson-list td {
 #projecttext {
 	font-size:85%;
 }
-
+#lesson-info p.pink  , #project-list p.pink {
+    background:#FF6;
+}
 

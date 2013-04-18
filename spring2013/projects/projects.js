@@ -22,7 +22,11 @@ $(document).ready(function() {
 				projectList += '<p><strong>'+students[index].first_name+'</strong>&mdash;'+course+'&mdash;'+description+'<button data-id="'+index+'" class="btn btn-mini btn-info comment-open" type="button">Comment</button></p>';	
 				if (students[index].comments) {
 					$.each(students[index].comments,function(index2,value2) {
+						if (value2.student_email === value.email) {
+							projectList += '<p class="muted review pink">'+value2.first_name+'&nbsp;&mdash;&nbsp;'+value2.comment+'</p>';
+						} else {
 						projectList += '<p class="muted review">'+value2.first_name+'&nbsp;&mdash;&nbsp;'+value2.comment+'</p>';
+						}
 					});
 				}
 			}
